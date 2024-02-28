@@ -63,10 +63,10 @@ There is an interesting approach to the [Tic Tac Toe win condition in React](htt
 
 **Acceptance Criteria**
 
-- Can see a three-by-three grid game board
-- Player one can click on a square to mark it with an X
-- Player two can click on a square to mark it with an O
-- Players cannot click on a square that has already been marked
+- Can see a three-by-three grid game board ✅
+- Player one can click on a square to mark it with an X ✅
+- Player two can click on a square to mark it with an O ✅
+- Players cannot click on a square that has already been marked ✅
 
 **Story 2**: In order to play tic tac toe, as the user of the application, I should be able to win the game by marking three squares with the same mark in a horizontal, vertical, or diagonal row. I can restart the game at any time.
 
