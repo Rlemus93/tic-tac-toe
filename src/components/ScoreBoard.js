@@ -4,7 +4,15 @@ const ScoreBoard = ({ player1Tally, player2Tally }) => {
   return (
     <>
     <div className='score-board'>
-        <p>player 1 wins: {player1Tally} player 2 wins: {player2Tally}</p>
+        <p>SCOREBOARD</p>
+        <div className='tally-wrapper'>
+            <div className='tally'>
+                <p>Player 1 wins: {player1Tally}</p>
+            </div>
+             <div className='tally'>
+                <p>Player 2 wins: {player2Tally}</p>
+            </div>
+        </div>
     </div>
     </>
   )

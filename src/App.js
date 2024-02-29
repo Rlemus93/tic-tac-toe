@@ -84,36 +84,34 @@ const handleGamePlay = (index) => {
 
   return (
     <>
-    <div className='center'>
-      <h1>Tic Tac Toe</h1>
-      <div className='marker-options'>
-        <div className='markerbox'>
-        <p>Player 1, select your marker:</p>
-        {markers.map((value, index) => {
-          return <button className='playerbutton' key={index} onClick={() => setPlayer1Marker(value)}>{value}</button>
-        })}
-       
+      <div className='center'>
+        <h1 className='game-name'>Tic Tac Techies</h1>
+        <div className='marker-options'>
+          <div className='markerbox'>
+          <p>Player 1, select your marker:</p>
+          {markers.map((value, index) => {
+            return <button className='playerbutton' key={index} onClick={() => setPlayer1Marker(value)}>{value}</button>
+          })}
+          </div>
+          <div className='markerbox'>
+          <p>Player 2, select your marker:</p>
+          {markers.map((value, index) => {
+            return <button className='playerbutton' key={index} onClick={() => setPlayer2Marker(value)}>{value}</button>
+          })}
+          </div>
         </div>
-        <div className='markerbox'>
-        <p>Player 2, select your marker:</p>
-        {markers.map((value, index) => {
-          return <button className='playerbutton' key={index} onClick={() => setPlayer2Marker(value)}>{value}</button>
-        })}
+          <div className='whose-turn'>{whoseTurn}</div>
+        <ScoreBoard player1Tally={player1Tally} player2Tally={player2Tally} />
+        <div className='boardwrapper'>
+          <div className='board'>
+            {squares.map((nullSquare, index) => {
+              return <Square handleGamePlay={handleGamePlay} index={index} key={index} nullSquare={nullSquare} />
+            })}
+          </div>
+          <div className='centerbutton'>
+            <button className= 'restartbutton' onClick={restart}>Restart</button>
+          </div>
         </div>
-      </div>
-      <br />
-        <div>{whoseTurn}</div>
-      <br />
-      <ScoreBoard player1Tally={player1Tally} player2Tally={player2Tally} />
-      <div className='boardwrapper'>
-      <div className='board'>
-        {squares.map((nullSquare, index) => {
-          return <Square handleGamePlay={handleGamePlay} index={index} key={index} nullSquare={nullSquare} />
-        })}
-       </div>
-      </div>
-      <div className='centerbutton'><button className= 'restartbutton' onClick={restart}>Restart</button>
-      </div>
       </div>
     </>
   )
