@@ -2,12 +2,189 @@
   border: 2px solid black;
   height: 100px;
   width: 100px;
+  background-color: rgba(255, 255, 255, 0.2);
+  font-size: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .board {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 auto;
-  width: 320px;
+  width: 312px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px #000000, 0 0 20px #000000, 0 0 30px #000000;
+  cursor: pointer;
+}
+
+.boardwrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.center {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+  background: linear-gradient(to right, #51B5FE 50%, #C1111F  50%);
+  min-height: 100dvh;
+  font-family: "Anta", sans-serif;
+}
+
+/* .center::before,
+.center::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border-radius: 20px;
+} */
+
+/* .center::before {
+  box-shadow: inset 0 0 10px black,
+              inset 0 0 20px black,
+              inset 0 0 30px black;
+} */
+
+/* .center::after {
+  box-shadow: inset 0 0 10px rgba(0, 0, 255, 0.5),
+              inset 0 0 20px rgba(0, 0, 255, 0.5),
+              inset 0 0 30px rgba(0, 0, 255, 0.5);
+} */
+
+
+.playerbutton {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+}
+
+.playerbutton:hover {
+  transform:scale(2.0)
+
+}
+
+.markerbox {
+  border: 1px solid black;
+  max-width: 200px;
+  max-height: 170px;
+  word-wrap: break-word;
+  overflow: auto;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.marker-options {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.restartbutton {
+  min-width: 100px;
+  min-height: 30px;
+  border: none;
+  border-radius: 999px;
+  margin-top: 20px;
+  background-color: white;
+  cursor: pointer;
+  font:inherit
+}
+
+.restartbutton:hover {
+  box-shadow: 0 0 10px #000000, 0 0 20px #000000, 0 0 30px #000000;
+}
+
+.centerbutton {
+  display: flex;
+  justify-content: center;
+}
+
+.score-board {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #403D3E;
+  height: 150px;
+  width: 200px;
+  color: white;
+  box-shadow: 0 0 10px #000000, 0 0 20px #000000, 0 0 30px #000000;
+}
+
+.tally-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.tally {
+  display: flex;
+}
+
+.game-name{
+  margin-bottom: 20px;
+  font-size: 45px;
+  text-shadow: 1px 1px 1px #fff;
+}
+
+.whose-turn {
+  margin: 15px;
+  position: absolute;
+  top: 200px;
+  left: 10px;
+  animation: pulse 1.5s infinite alternate;
+  font-size: 40px;
+}
+
+/* .gamerules {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #403D3E;
+  height: 250px;
+  width: 200px;
+  color: white;
+} */
+
+.leftphoto {
+  position: absolute;
+  max-height: 470px;
+  top: 207px;
+  left: 20px
+}
+
+.rightphoto {
+  position: absolute;
+  max-height: 470px;
+  top: 207px;
+  right: 20px;
+}
+
+@keyframes pulse {
+  0% {
+      color: #C1111F; /* Start color */
+      text-shadow: 0 0 10px #FF0000; /* Start shadow */
+  }
+  50% {
+      color: white; /* Middle color */
+      text-shadow: 0 0 20px #FF0000; /* Middle shadow */
+  }
+  100% {
+      color: black; /* End color */
+      text-shadow: 0 0 10px #FF0000; /* End shadow */
+  }
 }
 
