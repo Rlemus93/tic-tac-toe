@@ -7,7 +7,61 @@
 .board {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 auto;
-  width: 320px;
+  width: 312px;
 }
 
+.boardwrapper {
+  display: flex;
+  justify-content: center;
+
+}
+
+.center {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100dvh;
+  background-image: url('./images/background.webp');
+  background-size: cover;
+}
+
+.playerbutton {
+  border: none;
+  background-color: transparent;
+
+}
+
+.playerbutton:hover {
+  transform:scale(2.0)
+
+}
+
+.markerbox {
+  border: 1px solid black;
+  max-width: 200px;
+  max-height: 200px;
+  word-wrap: break-word;
+  overflow: auto;
+  border-radius: 10px;
+
+}
+
+.marker-options {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  
+
+}
+
+.restartbutton {
+  max-width: 100px;
+}
+
+.centerbutton {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}

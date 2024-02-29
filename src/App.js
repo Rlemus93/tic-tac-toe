@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Square from './components/Square'
 import './App.css'
 import ScoreBoard from './components/ScoreBoard'
+import background from './images/background.webp'
 
 const App = () => {
   const [squares, setSquares] = useState(Array(9).fill(null))
@@ -83,26 +84,37 @@ const handleGamePlay = (index) => {
 
   return (
     <>
+    <div className='center'>
       <h1>Tic Tac Toe</h1>
-      <div>{whoseTurn}</div>
       <div className='marker-options'>
+        <div className='markerbox'>
         <p>Player 1, select your marker:</p>
         {markers.map((value, index) => {
-          return <button key={index} onClick={() => setPlayer1Marker(value)}>{value}</button>
+          return <button className='playerbutton' key={index} onClick={() => setPlayer1Marker(value)}>{value}</button>
         })}
+       
+        </div>
+        <div className='markerbox'>
         <p>Player 2, select your marker:</p>
         {markers.map((value, index) => {
-          return <button key={index} onClick={() => setPlayer2Marker(value)}>{value}</button>
+          return <button className='playerbutton' key={index} onClick={() => setPlayer2Marker(value)}>{value}</button>
         })}
+        </div>
       </div>
       <br />
+        <div>{whoseTurn}</div>
+      <br />
       <ScoreBoard player1Tally={player1Tally} player2Tally={player2Tally} />
+      <div className='boardwrapper'>
       <div className='board'>
         {squares.map((nullSquare, index) => {
           return <Square handleGamePlay={handleGamePlay} index={index} key={index} nullSquare={nullSquare} />
         })}
+       </div>
       </div>
-      <button onClick={restart}>Restart</button>
+      <div className='centerbutton'><button className= 'restartbutton' onClick={restart}>Restart</button>
+      </div>
+      </div>
     </>
   )
 }
