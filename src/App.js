@@ -1,10 +1,20 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Square from './components/Square'
 import './App.css'
 
 const App = () => {
   const [squares, setSquares] = useState(Array(9).fill(null))
   const [counter, setCounter] = useState(0)
+
+  useEffect(() => {
+    const isItNull = squares.find(value => value === null)
+    if (isItNull !== null) {
+      setTimeout(() => {
+        alert("Cat's game!")
+         restart()
+       }, "200");
+    }
+  }, [squares]);
 
   const handleGamePlay = (index) => {
     const updatedBoard = [...squares]
@@ -44,7 +54,7 @@ const App = () => {
         setTimeout(() => {
          alert(`${squares[a]} has won`)
           restart()
-        }, "500");
+        }, "200");
       }
       return null;
     })
@@ -63,7 +73,7 @@ const App = () => {
       <h1>Tic Tac Toe</h1>
       <div className='board'>
         {squares.map((nullSquare, index) => {
-          return <Square handleGamePlay={handleGamePlay} index={index} key={index} nullSquare={nullSquare} />
+          return <Square handleGamePlay={handleGamePlay} index={index} key={index} nullSquare={nullSquare} squares={squares} />
         })}
       </div>
       <button onClick={restart}>Restart</button>

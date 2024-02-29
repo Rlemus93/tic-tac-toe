@@ -84,8 +84,8 @@ There is an interesting approach to the [Tic Tac Toe win condition in React](htt
 
 **Acceptance Criteria**
 
-- Game play cannot continue after all squares have been marked
-- Can see a notice displaying that this is a "cats game"
+- Game play cannot continue after all squares have been marked ✅
+- Can see a notice displaying that this is a "cats game" ✅
 
 ### 🏔 Stretch Goals
 
