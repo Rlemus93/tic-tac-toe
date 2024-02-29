@@ -3,12 +3,18 @@
   height: 150px;
   width: 150px;
   background-color: rgba(255, 255, 255, 0.2);
+  font-size: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .board {
   display: flex;
   flex-wrap: wrap;
-  width: 463px;
+  width: 462px;
+  margin-top: 20px;
+  box-shadow: 0 0 10px #000000, 0 0 20px #000000, 0 0 30px #000000;
 }
 
 .boardwrapper {
@@ -54,6 +60,7 @@
 .playerbutton {
   border: none;
   background-color: transparent;
+  
 
 }
 
@@ -70,6 +77,7 @@
   overflow: auto;
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.2);
+  
 }
 
 .marker-options {
@@ -79,11 +87,18 @@
 }
 
 .restartbutton {
-  max-width: 100px;
+  min-width: 100px;
+  min-height: 30px;
   border: none;
-  border-radius: 5px;
+  border-radius: 999px;
   margin-top: 20px;
   background-color: white;
+  cursor: pointer;
+  font:inherit
+}
+
+.restartbutton:hover {
+  box-shadow: 0 0 10px #000000, 0 0 20px #000000, 0 0 30px #000000;
 }
 
 .centerbutton {
@@ -115,11 +130,59 @@
 }
 
 .game-name{
-  box-shadow: white 0 0 90px 10px;
+  box-shadow: 0 0 10px #000000, 0 0 20px #000000, 0 0 30px #000000;
   margin-bottom: 20px;
   font-size: 40px;
 }
 
 .whose-turn {
   margin: 15px;
+  position: absolute;
+  top: 200px;
+  left: 15px;
+  animation: pulse 1.5s infinite alternate;
+  font-size: 50px;
 }
+
+/* .gamerules {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #403D3E;
+  height: 250px;
+  width: 200px;
+  color: white;
+} */
+
+.leftphoto {
+  position: absolute;
+  max-height: 550px;
+  top: 280px;
+  left: 20px
+}
+
+.rightphoto {
+  position: absolute;
+  max-height: 550px;
+  top: 280px;
+  right: 20px;
+}
+
+@keyframes pulse {
+  0% {
+      color: #C1111F; /* Start color */
+      text-shadow: 0 0 10px #FF0000; /* Start shadow */
+  }
+  50% {
+      color: white; /* Middle color */
+      text-shadow: 0 0 20px #FF0000; /* Middle shadow */
+  }
+  100% {
+      color: black; /* End color */
+      text-shadow: 0 0 10px #FF0000; /* End shadow */
+  }
+}
+

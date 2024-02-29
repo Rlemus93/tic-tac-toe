@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react'
 import Square from './components/Square'
 import './App.css'
 import ScoreBoard from './components/ScoreBoard'
-import background from './images/background.webp'
+import leftphoto from './images/leftphoto.webp'
+import rightphoto from './images/rightphoto.png'
 
 const App = () => {
   const [squares, setSquares] = useState(Array(9).fill(null))
@@ -12,7 +13,7 @@ const App = () => {
   const [player1Tally, setPlayer1Tally] = useState(0)
   const [player2Tally, setPlayer2Tally] = useState(0)
   const [currentPlayer, setCurrentPlayer] = useState(1)
-  const [whoseTurn, setWhoseTurn] = useState(`It is player 1's turn`)
+  const [whoseTurn, setWhoseTurn] = useState(`It's Player 1's turn`)
 
   useEffect(() => {
     const isItNull = squares.find(value => value === null)
@@ -30,7 +31,7 @@ const handleGamePlay = (index) => {
     const marker = currentPlayer === 1 ? player1Marker : player2Marker
     updatedBoard[index] = marker
     setSquares(updatedBoard)
-    setWhoseTurn(currentPlayer === 1 ? `It's player 2's's turn` : `It's player 1's turn`)
+    setWhoseTurn(currentPlayer === 1 ? `It's Player 2's turn` : `It's Player 1's turn`)
     setCurrentPlayer(currentPlayer === 1 ? 2 : 1)
   } else {
     alert("Already occupied!")
@@ -85,6 +86,8 @@ const handleGamePlay = (index) => {
   return (
     <>
       <div className='center'>
+        <img className='leftphoto' src={leftphoto} />
+        <img className='rightphoto' src={rightphoto} />
         <h1 className='game-name'>Tic Tac Techies</h1>
         <div className='marker-options'>
           <div className='markerbox'>
@@ -102,14 +105,15 @@ const handleGamePlay = (index) => {
         </div>
           <div className='whose-turn'>{whoseTurn}</div>
         <ScoreBoard player1Tally={player1Tally} player2Tally={player2Tally} />
+        
+          <div className='centerbutton'>
+            <button className= 'restartbutton' onClick={restart}>Restart</button>
+          </div>
         <div className='boardwrapper'>
           <div className='board'>
             {squares.map((nullSquare, index) => {
               return <Square handleGamePlay={handleGamePlay} index={index} key={index} nullSquare={nullSquare} />
             })}
-          </div>
-          <div className='centerbutton'>
-            <button className= 'restartbutton' onClick={restart}>Restart</button>
           </div>
         </div>
       </div>
