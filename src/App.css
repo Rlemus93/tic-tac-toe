@@ -1,9 +1,9 @@
 .square {
   border: 2px solid black;
-  height: 150px;
-  width: 150px;
+  height: 100px;
+  width: 100px;
   background-color: rgba(255, 255, 255, 0.2);
-  font-size: 100px;
+  font-size: 70px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,9 +12,11 @@
 .board {
   display: flex;
   flex-wrap: wrap;
-  width: 462px;
+  width: 312px;
   margin-top: 20px;
+  margin-bottom: 20px;
   box-shadow: 0 0 10px #000000, 0 0 20px #000000, 0 0 30px #000000;
+  cursor: pointer;
 }
 
 .boardwrapper {
@@ -60,7 +62,7 @@
 .playerbutton {
   border: none;
   background-color: transparent;
-  
+  cursor: pointer;
 
 }
 
@@ -72,12 +74,11 @@
 .markerbox {
   border: 1px solid black;
   max-width: 200px;
-  max-height: 200px;
+  max-height: 170px;
   word-wrap: break-word;
   overflow: auto;
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.2);
-  
 }
 
 .marker-options {
@@ -112,11 +113,12 @@
   left: 15px;
   border: 1px solid black;
   border-radius: 10px;
-  padding: 10px;
+  padding: 20px;
   background-color: #403D3E;
   height: 150px;
   width: 200px;
   color: white;
+  box-shadow: 0 0 10px #000000, 0 0 20px #000000, 0 0 30px #000000;
 }
 
 .tally-wrapper {
@@ -130,18 +132,18 @@
 }
 
 .game-name{
-  box-shadow: 0 0 10px #000000, 0 0 20px #000000, 0 0 30px #000000;
   margin-bottom: 20px;
-  font-size: 40px;
+  font-size: 45px;
+  text-shadow: 1px 1px 1px #fff;
 }
 
 .whose-turn {
   margin: 15px;
   position: absolute;
   top: 200px;
-  left: 15px;
+  left: 10px;
   animation: pulse 1.5s infinite alternate;
-  font-size: 50px;
+  font-size: 40px;
 }
 
 /* .gamerules {
@@ -159,15 +161,15 @@
 
 .leftphoto {
   position: absolute;
-  max-height: 550px;
-  top: 280px;
+  max-height: 470px;
+  top: 207px;
   left: 20px
 }
 
 .rightphoto {
   position: absolute;
-  max-height: 550px;
-  top: 280px;
+  max-height: 470px;
+  top: 207px;
   right: 20px;
 }
 

@@ -15,6 +15,9 @@ const App = () => {
   const [currentPlayer, setCurrentPlayer] = useState(1)
   const [whoseTurn, setWhoseTurn] = useState(`It's Player 1's turn`)
 
+  // useEffect is checking for changes in squares and showAlerts (useStates)
+  //conditional for cat's game
+  // setTimeout for asyncronous
   useEffect(() => {
     const isItNull = squares.find(value => value === null)
     if (isItNull !== null && showAlerts === true) {
@@ -25,6 +28,10 @@ const App = () => {
     }
   }, [squares, showAlerts]);
 
+  // fed the index of square clicked
+  // shallow copy of the board
+  // logic determining who made the move/what their marker was/switching turn to other player
+  // checking for winner every move
 const handleGamePlay = (index) => {
   const updatedBoard = [...squares]
   if (squares[index] === null) {
@@ -40,13 +47,15 @@ const handleGamePlay = (index) => {
 }
 
   const markers = [
-    "X", "O", "❌", "⭕️", "🌟", "💥", "🔥", "🎉", "👑", "🚀", "🎈", "💣", "🍕", "🍔", "🍟", "🍦", "🍰", "🍭", "🍉", "🍌",
+    "❌", "⭕️", "🌟", "💥", "🔥", "🎉", "👑", "🚀", "🎈", "💣", "🍕", "🍔", "🍟", "🍦", "🍰", "🍭", "🍉", "🍌",
     "🍓", "🍒", "🍇", "🥝", "🍑", "🍍", "🥥", "🍋", "🍊", "🍏", "🍎", "🥕", "🍆", "🥔", "🌽", "🌶", "🥒", "🥬", "🥦", "🍄", "🥜",
     "🌰", "🍞", "🥐", "🥖", "🥨", "🧀", "🥚", "🍳", "🥓", "🥩", "🍗", "🍖", "🌭", "🍔", "🍟", "🍕", "🥪", "🌮", "🌯", "🥙", "🧆",
     "🥚", "🍳", "🥘", "🍲", "🥣", "🥗", "🍿", "🧈", "🧂", "🥫", "🍱", "🍘", "🍙", "🍚", "🍛", "🍜", "🍝", "🍠", "🍢", "🍣", "🍤",
     "🍥", "🥮", "🍡", "🥟", "🥠", "🍦", "🍧", "🍨", "🍩", "🍪", "🎂", "🍰", "🧁", "🥧", "🍫", "🍬", "🍭", "🍮", "🍯", "🍼"
   ]
 
+  // after every click, board is passed
+  // lines is destructured to compare board squares
   const winningSquares = (squares) => {
     const lines = [
       [0, 1, 2],
@@ -91,6 +100,7 @@ const handleGamePlay = (index) => {
         <h1 className='game-name'>Tic Tac Techies</h1>
         <div className='marker-options'>
           <div className='markerbox'>
+
           <p>Player 1, select your marker:</p>
           {markers.map((value, index) => {
             return <button className='playerbutton' key={index} onClick={() => setPlayer1Marker(value)}>{value}</button>
@@ -103,9 +113,9 @@ const handleGamePlay = (index) => {
           })}
           </div>
         </div>
+        
           <div className='whose-turn'>{whoseTurn}</div>
         <ScoreBoard player1Tally={player1Tally} player2Tally={player2Tally} />
-        
           <div className='centerbutton'>
             <button className= 'restartbutton' onClick={restart}>Restart</button>
           </div>
